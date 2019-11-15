@@ -32,7 +32,7 @@ manual_tuning <- function() {
     control    = makeTuneControlRandom(maxit = 200L)
   )
   
-  write_rds(res, path = "output/models/mdl4_runing_results.rds")
+  write_rds(res, path = "output/models/mdl4_tuning_results.rds")
   
   # data = generateHyperParsEffectData(res, partial.dep = T)
   # 
