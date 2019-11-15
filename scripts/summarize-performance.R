@@ -4,9 +4,6 @@ library("purrr")
 library("readr")
 library("tidyr")
 library("dplyr")
-library("here")
-
-setwd(here::here("regime-forecast"))
 
 all_perf <- dir("output/performance", 
                 pattern = "mdl[0-9]+[a-z-]+performance.csv", 
@@ -43,7 +40,8 @@ cv_perf <- all_perf %>%
 cv_perf
 
 write_csv(cv_perf, "output/tables/cv_perf.csv")
-write_csv(cv_perf, "../Paper/data/cv_perf.csv")
+# 2019-11-15, AB: this is a relic from the dropbox past, see PART repo
+#write_csv(cv_perf, "../Paper/data/cv_perf.csv")
 
 
 test_perf <- all_perf %>%
@@ -54,4 +52,6 @@ test_perf <- all_perf %>%
 test_perf
 
 write_csv(test_perf, "output/tables/test_perf.csv")
-write_csv(test_perf, "../Paper/data/test_perf.csv")
+
+# 2019-11-15, AB: ditto, relic
+#write_csv(test_perf, "../Paper/data/test_perf.csv")

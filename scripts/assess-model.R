@@ -5,23 +5,16 @@
 
 packs <- c("tidyverse", "rio", "mlr", "glmnet", "here", "MLmetrics", "pROC", 
            "xtable", "futile.logger", "parallelMap", "e1071", "MLmetrics", 
-           "doParallel", "states", "vfcast")
+           "doParallel", "states")
 # install.packages(packs, dependencies = TRUE)
 lapply(packs, library, character.only = TRUE)
 
-setwd(vpath("regime-forecast"))
 source("R/functions.R")
 
 #   This relies on model_prefix to find relevant files
-#
-  model_prefix <- "mdl6"
-
-# model_prefixs <- paste0("mdl", 3:6, sep = "")
-
-# for(r in model_prefixs){
-
-# model_prefix <- r
-# print(model_prefix)
+#   This is already set in the train models scripts, but if running this 
+#   script by itself, set it. 
+#model_prefix <- "mdl1"
 
 plot_title <- switch(model_prefix,
                      mdl1 = "Base rate Model",

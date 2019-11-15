@@ -6,18 +6,14 @@
 #   data.
 #
 
-
-# if (basename(getwd())!="regime-forecast") {
-#   stop("Run me from 'regime-forecast'", call. = FALSE)
-# }
-
 packs <- c("tidyverse", "rio", "mlr", "glmnet", "here", "MLmetrics", "pROC", 
            "xtable", "futile.logger", "parallelMap", "e1071", "MLmetrics", 
-           "doParallel", "states", "vfcast")
+           "doParallel", "states")
 # install.packages(packs, dependencies = TRUE)
 # install.packages("C:/Users/xricmo/Dropbox/VForecast/vfcast_0.0.1.tar.gz")
 lapply(packs, library, character.only = TRUE)
-setwd(vpath("regime-forecast"))
+
+stopifnot(basename(getwd())=="VForecast")
 
 # which year to forecast for?
 TARGET_YEAR <- 2019

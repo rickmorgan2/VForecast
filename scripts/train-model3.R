@@ -5,13 +5,6 @@
 # to ID output files
 model_prefix <- "mdl3"
 
-# if (basename(getwd())!="regime-forecast") {
-#   stop("Run me from 'regime-forecast'", call. = FALSE)
-# }
-
-# install.packages("C:/Users/xricmo/Dropbox/VForecast/vfcast_0.0.1.tar.gz")
-library(vfcast)
-setwd(vpath("regime-forecast"))
 # Load needed packages and setup global variables controlling model training
 source("scripts/0-setup-training-environment.R")
 # import functions

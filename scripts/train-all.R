@@ -1,6 +1,4 @@
 
-library("vfcast")
-setwd(vpath("regime-forecast"))
 
 source("scripts/train-model1.R", echo = TRUE)
 source("scripts/train-model2.R", echo = TRUE)
