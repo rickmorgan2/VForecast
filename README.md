@@ -3,7 +3,7 @@
 
 # Predicting Adverse Regime Transitions (PART)
 
-README last compiled on: 2019-11-15
+README last compiled on: 2019-11-21
 
 Data and code for the V-Dem VForecast/PART project to predict the risk
 of adverse regime transitions.
@@ -15,6 +15,14 @@ contents of that folder here, and also bumped up one level a smaller
 partial copy of `regime-forecast` that was in this repo from before.*
 
 ## Reproduction
+
+The `Data_management` folder contains all of the `R` scripts necessary
+for data organization. Due to the size of the data files, we cannot
+share them through this repo. However, you can find the finished
+product, `ALL_data_final_USE_v9.csv`, in the `input` folder. For this
+project we use V-Dem V9 along with a number of external data sources
+(See: `Data_management/compile_external_data.R`). Please contact Andy
+for access to these data.
 
 To run the models, see the `train-model....R` R scripts in the `scripts`
 folder. It should be possible to run all of the independently as long as
@@ -53,27 +61,29 @@ summaries and stuff like that.
 
 #### Summary performance
 
-Cross-validation performance:
+Cross-validation
+performance:
 
 | name                                  | model | Brier | AUC\_ROC | AUC\_PR | Kappa | trained\_on |
 | :------------------------------------ | :---- | ----: | -------: | ------: | ----: | :---------- |
-| Lagged RoW logistic regression        | mdl1  |  0.04 |     0.71 |    0.08 |  0.00 | 2019-04-12  |
-| Small feature set logistic regression | mdl2  |  0.04 |     0.77 |    0.14 |  0.00 | 2019-04-12  |
-| Elastic net logistic regression       | mdl3  |  0.04 |     0.85 |    0.30 |  0.10 | 2019-04-12  |
-| Random forest                         | mdl4  |  0.03 |     0.91 |    0.40 |  0.19 | 2019-04-12  |
-| XGBoost                               | mdl5  |  0.04 |     0.92 |    0.42 |  0.25 | 2019-04-13  |
-| Ensemble                              | mdl6  |  0.03 |     0.93 |    0.46 |  0.17 | 2019-04-13  |
+| Lagged RoW logistic regression        | mdl1  |  0.04 |     0.71 |    0.08 |  0.00 | 2019-11-21  |
+| Small feature set logistic regression | mdl2  |  0.04 |     0.77 |    0.14 |  0.00 | 2019-11-21  |
+| Elastic net logistic regression       | mdl3  |  0.04 |     0.85 |    0.30 |  0.10 | 2019-11-21  |
+| Random forest                         | mdl4  |  0.03 |     0.91 |    0.40 |  0.19 | 2019-11-21  |
+| XGBoost                               | mdl5  |  0.04 |     0.92 |    0.42 |  0.25 | 2019-11-21  |
+| Ensemble                              | mdl6  |  0.03 |     0.93 |    0.46 |  0.17 | 2019-11-21  |
 
-Test forecast performance
+Test forecast
+performance
 
 | name                                  | model | Brier | AUC\_ROC | AUC\_PR | Kappa | trained\_on |
 | :------------------------------------ | :---- | ----: | -------: | ------: | ----: | :---------- |
-| Lagged RoW logistic regression        | mdl1  |  0.07 |     0.62 |    0.10 |  0.00 | 2019-04-12  |
-| Small feature set logistic regression | mdl2  |  0.07 |     0.65 |    0.15 |  0.00 | 2019-04-12  |
-| Elastic net logistic regression       | mdl3  |  0.06 |     0.78 |    0.26 |  0.08 | 2019-04-12  |
-| Random forest                         | mdl4  |  0.06 |     0.82 |    0.37 |  0.05 | 2019-04-12  |
-| XGBoost                               | mdl5  |  0.06 |     0.81 |    0.36 |  0.16 | 2019-04-13  |
-| Ensemble                              | mdl6  |  0.06 |     0.84 |    0.39 |  0.10 | 2019-04-13  |
+| Lagged RoW logistic regression        | mdl1  |  0.07 |     0.62 |    0.10 |  0.00 | 2019-11-21  |
+| Small feature set logistic regression | mdl2  |  0.07 |     0.65 |    0.15 |  0.00 | 2019-11-21  |
+| Elastic net logistic regression       | mdl3  |  0.06 |     0.78 |    0.26 |  0.08 | 2019-11-21  |
+| Random forest                         | mdl4  |  0.06 |     0.82 |    0.37 |  0.05 | 2019-11-21  |
+| XGBoost                               | mdl5  |  0.06 |     0.81 |    0.36 |  0.16 | 2019-11-21  |
+| Ensemble                              | mdl6  |  0.06 |     0.84 |    0.39 |  0.10 | 2019-11-21  |
 
 #### Definitions
 
@@ -99,7 +109,8 @@ Test forecast performance
   - **Kappa –** A metric that compares an observed accuracy with an
     expected accuracy (random chance). It takes into account agreement
     with a random classifier.
-      - The **higher** the score, the **better**.
+      - The **higher** the score, the
+**better**.
 
 ### Separation plots
 
