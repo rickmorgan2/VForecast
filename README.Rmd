@@ -31,133 +31,120 @@ The `output` folder contains copies of the output from when we ran the full set 
 
 *AB 2019-11-25: I made minimal changes to be able to run `train-model1.R` from the GH repo. I only checked that script as the other models can take a while to run. I noticed that the output changes slightly, not sure why.*
 
+The `ForecastApp` folder contains the code for the Shiny dashboard on the V-Dem website [here](https://www.v-dem.net/en/analysis/Forecast)
+
 ## Related repos
 
 - [andybega/part](https://github.com/andybega/part) has one of the PART papers
 - [andybega/vfcast](https://github.com/andybega/vfcast) is a tiny R package that had paths to Dropbox for Andy and Rick, to avoid having some path finding logic at the top of every single script. Not really needed for git so I might delete it. 
 
-## Copy of Dropbox README
+<!-- ## Copy of Dropbox README -->
 
-Below is a copy of the README.Rmd file that is on Dropbox. It has fit summaries and stuff like that. 
+<!-- Below is a copy of the README.Rmd file that is on Dropbox. It has fit summaries and stuff like that.  -->
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+<!-- ```{r setup, include=FALSE} -->
+<!-- knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE) -->
 
-library("dplyr")
-library("readr")
-library("purrr")
-library("readr")
-library("tidyr")
-library("dplyr")
+<!-- library("dplyr") -->
+<!-- library("readr") -->
+<!-- library("purrr") -->
+<!-- library("readr") -->
+<!-- library("tidyr") -->
+<!-- library("dplyr") -->
 
-all_perf <- dir("output/performance", 
-                pattern = "mdl[0-9]+[a-z-]+performance.csv", 
-                full.names = TRUE) %>%
-  # so that dfr id is not just index
-  setNames(., .) %>%
-  map_dfr(., read_csv, col_types = cols(
-    model = col_character(),
-    set = col_character(),
-    measure = col_character(),
-    value = col_double()),
-    .id = "file_path") %>%
-  # add file mod time so we know when model was trained
-  mutate(trained_on = map_chr(file_path, function(x) {
-    out <- file.info(x)[["mtime"]]
-    as.character(as.Date(out))
-  })) %>%
-  mutate(name = case_when(
-    model=="mdl1" ~ "Lagged RoW logistic regression",
-    model=="mdl2" ~ "Small feature set logistic regression",
-    model=="mdl3" ~ "Elastic net logistic regression",
-    model=="mdl4" ~ "Random forest",
-    model=="mdl5" ~ "XGBoost",
-    model=="mdl6" ~ "Ensemble",
-    TRUE ~ "fill me in"
-  )) %>%
-  select(-file_path)
-```
+<!-- all_perf <- dir("output/performance",  -->
+<!--                 pattern = "mdl[0-9]+[a-z-]+performance.csv",  -->
+<!--                 full.names = TRUE) %>% -->
+<!--   # so that dfr id is not just index -->
+<!--   setNames(., .) %>% -->
+<!--   map_dfr(., read_csv, col_types = cols( -->
+<!--     model = col_character(), -->
+<!--     set = col_character(), -->
+<!--     measure = col_character(), -->
+<!--     value = col_double()), -->
+<!--     .id = "file_path") %>% -->
+<!--   # add file mod time so we know when model was trained -->
+<!--   mutate(trained_on = map_chr(file_path, function(x) { -->
+<!--     out <- file.info(x)[["mtime"]] -->
+<!--     as.character(as.Date(out)) -->
+<!--   })) %>% -->
+<!--   mutate(name = case_when( -->
+<!--     model=="mdl1" ~ "Lagged RoW logistic regression", -->
+<!--     model=="mdl2" ~ "Small feature set logistic regression", -->
+<!--     model=="mdl3" ~ "Elastic net logistic regression", -->
+<!--     model=="mdl4" ~ "Random forest", -->
+<!--     model=="mdl5" ~ "XGBoost", -->
+<!--     model=="mdl6" ~ "Ensemble", -->
+<!--     TRUE ~ "fill me in" -->
+<!--   )) %>% -->
+<!--   select(-file_path) -->
+<!-- ``` -->
 
-#### Summary performance
+<!-- #### Summary performance -->
 
-Cross-validation performance:
+<!-- Cross-validation performance: -->
 
-```{r}
-cv_perf <- all_perf %>%
-  filter(set=="CV") %>%
-  spread(measure, value) %>%
-  arrange(model) %>%
-  select(name, model, Brier, AUC_ROC, AUC_PR, Kappa, trained_on)#, everything()) ## Accuracy, 
-cv_perf %>%
-  knitr::kable(digits = 2)
-```
-
-
-Test forecast performance
-
-```{r}
-test_perf <- all_perf %>%
-  filter(set=="test forecasts") %>%
-  spread(measure, value) %>%
-  arrange(model) %>%
-  select(name, model, Brier, AUC_ROC, AUC_PR, Kappa, trained_on)#, everything()) ## Accuracy, 
-test_perf %>%
-  knitr::kable(digits = 2)
-```
+<!-- ```{r} -->
+<!-- cv_perf <- all_perf %>% -->
+<!--   filter(set=="CV") %>% -->
+<!--   spread(measure, value) %>% -->
+<!--   arrange(model) %>% -->
+<!--   select(name, model, Brier, AUC_ROC, AUC_PR, Kappa, trained_on)#, everything()) ## Accuracy,  -->
+<!-- cv_perf %>% -->
+<!--   knitr::kable(digits = 2) -->
+<!-- ``` -->
 
 
-#### Definitions
+<!-- Test forecast performance -->
 
-* **Brier --** The mean squared difference between the predicted probability and the observed outcome. 
-    + The **lower** the score, the **better** the predictions are **calibrated**.  
-    \
-    
-* **AUC_ROC --** Area Under the Curve-Receiver Operating Characteristic Curve: The total area under the curve created by plotting the **true positive** rate against the **false positive** rate across the range of **acceptance thresholds** (0, 1). 
-    + The **higher** the score, the **better**.  
-    \
-    
-* **AUC_PR --** Area Under the Curve-Precision Recall: The trade-off between precision -- **false positive** rate -- and recall -- **false negative** rate -- across the range of **acceptance thresholds** (0, 1). 
-    + Better the AUC-ROC when classes are very imbalanced, as is the case in our data.
-    + The **higher** the score, the **better**.  
-    \
-    
-* **Kappa --** A metric that compares an observed accuracy with an expected accuracy (random chance). It takes into account agreement with a random classifier.
-    + The **higher** the score, the **better**.
+<!-- ```{r} -->
+<!-- test_perf <- all_perf %>% -->
+<!--   filter(set=="test forecasts") %>% -->
+<!--   spread(measure, value) %>% -->
+<!--   arrange(model) %>% -->
+<!--   select(name, model, Brier, AUC_ROC, AUC_PR, Kappa, trained_on)#, everything()) ## Accuracy,  -->
+<!-- test_perf %>% -->
+<!--   knitr::kable(digits = 2) -->
+<!-- ``` -->
+
+
+<!-- #### Definitions -->
+
+<!-- * **Brier --** The mean squared difference between the predicted probability and the observed outcome.  -->
+<!--     + The **lower** the score, the **better** the predictions are **calibrated**.   -->
+<!--     \ -->
+
+<!-- * **AUC_ROC --** Area Under the Curve-Receiver Operating Characteristic Curve: The total area under the curve created by plotting the **true positive** rate against the **false positive** rate across the range of **acceptance thresholds** (0, 1).  -->
+<!--     + The **higher** the score, the **better**.   -->
+<!--     \ -->
+
+<!-- * **AUC_PR --** Area Under the Curve-Precision Recall: The trade-off between precision -- **false positive** rate -- and recall -- **false negative** rate -- across the range of **acceptance thresholds** (0, 1).  -->
+<!--     + Better the AUC-ROC when classes are very imbalanced, as is the case in our data. -->
+<!--     + The **higher** the score, the **better**.   -->
+<!--     \ -->
+
+<!-- * **Kappa --** A metric that compares an observed accuracy with an expected accuracy (random chance). It takes into account agreement with a random classifier. -->
+<!--     + The **higher** the score, the **better**. -->
   
-### Separation plots 
-#### Ordered predictions for all country-year obs. (1970-2017) from trained models (5-fold cross-validation)
-* **Black line --** The predicted probability for each observation
-* **Red lines --** Observations with an ART
-* **Beige lines --** Observations without an ART  
-    \
+<!-- ### Separation plots  -->
+<!-- #### Ordered predictions for all country-year obs. (1970-2017) from trained models (5-fold cross-validation) -->
+<!-- * **Black line --** The predicted probability for each observation -->
+<!-- * **Red lines --** Observations with an ART -->
+<!-- * **Beige lines --** Observations without an ART   -->
+<!--     \ -->
 
-#### Rule of Thumb: More red to the right, the better
-
-
+<!-- #### Rule of Thumb: More red to the right, the better -->
 
 
 
-```{r, results='asis'}
-plots <- dir("output/figures", pattern = "sepplot_RM", full.names = TRUE)
-mdl_no <- stringr::str_extract(plots, "[0-9]") %>% as.integer()
-for (i in seq_along(plots)) {
-  cat(sprintf("\n**Model %s**\n\n", mdl_no[i]))
-  cat(sprintf("![](%s)\n", plots[i]))
-}
-```
 
 
-"currentRegimeDuration",  "v2x_regime", "v2x_regime_amb", 
-"low_border_case", "high_border_case","any_neg_change", 
-"num_of_neg_changes_5yrs",
-"gdp_pc_log",                                 
-
-"v2x_jucon_new", "diff_year_prior_v2x_jucon_new", 
-"v2xlg_legcon_new", "diff_year_prior_v2xlg_legcon_new",
-"v2x_freexp_altinf_new", "diff_year_prior_v2x_freexp_altinf_new",
-
-"v2x_elecreg_new", "diff_year_prior_v2x_elecreg_new",
-"v2x_elecoff_new", "diff_year_prior_v2x_elecoff_new",
-"v2xel_frefair_new", "diff_year_prior_v2xel_frefair_new"
-
+<!-- ```{r, results='asis'} -->
+<!-- plots <- dir("output/figures", pattern = "sepplot_RM", full.names = TRUE) -->
+<!-- mdl_no <- stringr::str_extract(plots, "[0-9]") %>% as.integer() -->
+<!-- for (i in seq_along(plots)) { -->
+<!--   cat(sprintf("\n**Model %s**\n\n", mdl_no[i])) -->
+<!--   cat(sprintf("![](%s)\n", plots[i])) -->
+<!-- } -->
+<!-- ``` -->
 
