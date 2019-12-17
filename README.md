@@ -3,7 +3,7 @@
 
 # Predicting Adverse Regime Transitions (PART)
 
-README last compiled on: 2019-12-10
+README last compiled on: 2019-12-17
 
 Data and code for the V-Dem VForecast/PART project to predict the risk
 of adverse regime transitions.
@@ -19,16 +19,17 @@ partial copy of `regime-forecast` that was in this repo from before.*
 The `Data_management` folder contains all of the `R` scripts necessary
 for data organization. Due to the size of the data files, we cannot
 share them through this repo. However, you can find the finished
-product, `ALL_data_final_USE_v9.csv`, in the `input` folder. For this
-project we use V-Dem V9 along with a number of external data sources
-(See: `Data_management/compile_external_data.R`). Please contact Andy
-for access to these data.
+product, `ALL_data_final_USE_v9.csv`, in the `Models/input` folder. For
+this project we use V-Dem V9 along with a number of external data
+sources (See: `Data_management/compile_external_data.R`). Please contact
+Andy for access to these data.
 
-To run the models, see the `train-model....R` R scripts in the `scripts`
-folder. It should be possible to run all of the independently as long as
-the neccessary packages listed at the top of each file are installed.
-The working directory should be the root of this repo/project,
-i.e. `basename(getwd())` should be `"VForecast"`.
+The `Models` folder contains the scripts to estimate models. To run the
+models, see the `train-model....R` R scripts in the `scripts` folder. It
+should be possible to run all of the independently as long as the
+neccessary packages listed at the top of each file are installed. The
+working directory should be the `Models` folder under this repo/project,
+i.e. `basename(getwd())` should be `Models`.
 
 Each model runner script depends on the input data in the `input`
 folder, and on the `0-setup-training-environment.R` script to setup data
@@ -55,8 +56,7 @@ the V-Dem website [here](https://www.v-dem.net/en/analysis/Forecast)
   - [andybega/vfcast](https://github.com/andybega/vfcast) is a tiny R
     package that had paths to Dropbox for Andy and Rick, to avoid having
     some path finding logic at the top of every single script. Not
-    really needed for git so I might delete
-it.
+    really needed for git so I might delete it.
 
 <!-- ## Copy of Dropbox README -->
 
