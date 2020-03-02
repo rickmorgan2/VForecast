@@ -11,6 +11,18 @@ GW_shp_file_data <- data.frame(GW_shp_file_new@data, stringsAsFactors = FALSE)%>
     prob_onset, map_color_prob, color_prob, regime_asCharacter, center_lon, center_lat, popUp_text)%>%
   na.omit(.)
 
+# Translate popup into French
+GW_shp_file_data$popUp_text <- sub(pattern = "Probablity of Adverse Regime Transition",
+                                   replacement = "Probabilité d’un changement de régime défavorable",
+                                   x = GW_shp_file_data$popUp_text, fixed = T)
+
+GW_shp_file_data$popUp_text <- sub(pattern = "Estimated Risk Ranking 2019/2020",
+                                   replacement = "Rang selon le risque estimé pour 2019/2020",
+                                   x = GW_shp_file_data$popUp_text, fixed = T)
+
+GW_shp_file_data$popUp_text <- sub(pattern = "ROW Class in 2018",
+                                   replacement = "Type de régime (RoW) en 2018",
+                                   x = GW_shp_file_data$popUp_text, fixed = T)
 
 bar_plot_dat <- readRDS("Data/bar_plot_dat.rds")
 N <- length(bar_plot_dat[, 1])
