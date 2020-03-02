@@ -46,7 +46,7 @@ topNriskFun <- function(dat, N){
                             fontSize = plotsFontSize, 
                             fontWeight = "bold")))%>%
     hc_yAxis(min = 0, max = 50,
-           title = list(text = paste("", N, " risques les plus élevés (%) pour 2019-2020", sep = ""),
+           title = list(text = paste("", N, " pays les plus à risque pour 2019-2020 (risque en %)", sep = ""),
                          style = list(
                             fontSize = plotsFontSize, 
                             fontWeight = "bold")), 

@@ -1,5 +1,5 @@
 # Draft French translation file for V-Forecast Shiny app (https://github.com/rickmorgan2/VForecast)
-# Version 1, 2 MArch 2020.
+# Version 2, 2 MArch 2020.
 # Author of French translation and "sed" commands: Mayeul Kauffmann, Cybis-UGA, March 2020
 # The French translation part and the sed part are licensed under CC0 (public domain);
 # hence they can be mixed with other licenses if needed. Attribution is not required but appreciated.
@@ -91,7 +91,9 @@ not the « thick » freedom?	global.r	Freedom of Association	Liberté d'associ
 not the « thick » freedom?	global.r	Freedom of Association CI	IC Liberté d'association	sed -i "s/\"Freedom of Association CI\"/\"IC Liberté d'association\"/g" global.r
 not the « thick » freedom?	global.r	Freedom of Association CIs	IC Liberté d'association	sed -i "s/\"Freedom of Association CIs\"/\"IC Liberté d'association\"/g" global.r
 "Top ", N, " Estimated Risks (%) for 2019-2020"	global.r	Top 		sed -i "s/\"Top \"/\"\"/g" global.r
-"Top ", N, " Estimated Risks (%) for 2019-2020"	global.r	 Estimated Risks (%) for 2019-2020	 risques les plus élevés (%) pour 2019-2020	sed -i "s/\" Estimated Risks (%) for 2019-2020\"/\" risques les plus élevés (%) pour 2019-2020\"/g" global.r
-				
-				
+"Top ", N, " Estimated Risks (%) for 2019-2020"	global.r	 Estimated Risks (%) for 2019-2020	 pays les plus à risque pour 2019-2020 (risque en %)	sed -i "s/\" Estimated Risks (%) for 2019-2020\"/\" pays les plus à risque pour 2019-2020 (risque en %)\"/g" global.r
+    ui.r	(See	(Cf. le	sed -i "s/\"(See\"/\"(Cf. le\"/g" ui.r
+    ui.r	 working paper	document de travail	sed -i "s/\" working paper\"/\"document de travail\"/g" ui.r
+    ui.r	 for more details)	 pour plus de précisions)	sed -i "s/\" for more details)\"/\" pour plus de précisions)\"/g" ui.r
+
 original has bold html tags but sed chokes on these ; so our sed command does not check enclosing double quotes in source R code either	global.r	Yearly Risk Estimates: 2011-2020	Estimations du risque annuel : 2011-2020	sed -i 's/Yearly Risk Estimates: 2011-2020/Estimations du risque annuel : 2011-2020/g' global.r
