@@ -46,7 +46,7 @@ topNriskFun <- function(dat, N){
                             fontSize = plotsFontSize, 
                             fontWeight = "bold")))%>%
     hc_yAxis(min = 0, max = 50,
-           title = list(text = paste("Top ", N, " Estimated Risks (%) for 2019-2020", sep = ""),
+           title = list(text = paste("", N, " risques les plus élevés (%) pour 2019-2020", sep = ""),
                          style = list(
                             fontSize = plotsFontSize, 
                             fontWeight = "bold")), 
@@ -66,14 +66,14 @@ riskPlotFun <- function(dat){
             labels = list(style = list(
                             fontSize = plotsFontSize, 
                             fontWeight = "bold")))%>%
-    hc_yAxis(min = 0, max = 60, title = list(text = "Estimated Risk (%)",
+    hc_yAxis(min = 0, max = 60, title = list(text = "Risque estimé (%)",
                          style = list(
                             fontSize = plotsFontSize, 
                             fontWeight = "bold")), 
            labels = list(style = list(
                             fontSize = plotsFontSize, 
                             fontWeight = "bold")))%>% 
-    hc_title(text = "<b>Yearly Risk Estimates: 2011-2020</b>",
+    hc_title(text = "<b>Estimations du risque annuel : 2011-2020</b>",
              margin = 20, align = "center",
              style = list(fontSize = plotsFontSize, useHTML = TRUE))
   }
@@ -87,14 +87,14 @@ blankRiskPlotFun <- function(){
             labels = list(style = list(
                             fontSize = plotsFontSize, 
                             fontWeight = "bold")))%>%
-    hc_yAxis(min = 0, max = 60, title = list(text = "Estimated Risk (%)",
+    hc_yAxis(min = 0, max = 60, title = list(text = "Risque estimé (%)",
                          style = list(
                             fontSize = plotsFontSize, 
                             fontWeight = "bold")), 
            labels = list(style = list(
                             fontSize = plotsFontSize, 
                             fontWeight = "bold")))%>% 
-    hc_title(text = "<b>Yearly Risk Estimates: 2011-2020</b>",
+    hc_title(text = "<b>Estimations du risque annuel : 2011-2020</b>",
              margin = 20, align = "center",
              style = list(fontSize = plotsFontSize, useHTML = TRUE))
   }
@@ -151,130 +151,130 @@ timeSeriesPlotFun <- function(dat, to_plot, CIs){
   if("v2x_liberal" %in% to_plot){
     PlotHC <- PlotHC%>%
       hc_add_series(data = dat, type = "line", hcaes(x = year, y = v2x_liberal),
-          name = "Liberal Component", color = v2x_liberal_color, id = "p2")
+          name = "Volet libéral", color = v2x_liberal_color, id = "p2")
       if(CIs){
       PlotHC <- PlotHC%>%
         hc_add_series(data = dat, type = "arearange", hcaes(x = year, low = v2x_liberal_codelow, high = v2x_liberal_codehigh),
-          name = "Liberal Component CI", fillOpacity = 0.15, lineWidth = 0, color = v2x_liberal_color, linkedTo = "p2") 
+          name = "IC Volet libéral", fillOpacity = 0.15, lineWidth = 0, color = v2x_liberal_color, linkedTo = "p2") 
       }
   } 
   if(!("v2x_liberal" %in% to_plot)){
     PlotHC <- PlotHC%>%
-        hc_rm_series(name = c("Liberal Component", "Liberal Component CIs"))
+        hc_rm_series(name = c("Volet libéral", "IC Volet libéral"))
   } 
   if("v2xcl_rol" %in% to_plot){
     PlotHC <- PlotHC%>%
       hc_add_series(data = dat, type = "line", hcaes(x = year, y = v2xcl_rol),
-          name = "Equality Before the Law & Indiv. Liberty", color = v2xcl_rol_color, id = "p6")
+          name = "Égalité devant la loi et Liberté individuelle", color = v2xcl_rol_color, id = "p6")
       if(CIs){
       PlotHC <- PlotHC%>%
         hc_add_series(data = dat, type = "arearange", hcaes(x = year, low = v2xcl_rol_codelow, high = v2xcl_rol_codehigh),
-          name = "Equality Before the Law & Indiv. Liberty CI", fillOpacity = 0.15, lineWidth = 0, color = v2xcl_rol_color, linkedTo = "p6") 
+          name = "IC Égalité devant la loi et Liberté individuelle", fillOpacity = 0.15, lineWidth = 0, color = v2xcl_rol_color, linkedTo = "p6") 
       }
   } 
   if(!("v2xcl_rol" %in% to_plot)){
     PlotHC <- PlotHC%>%
-        hc_rm_series(name = c("Equality Before the Law & Indiv. Liberty", "Equality Before the Law & Indiv. Liberty CIs"))
+        hc_rm_series(name = c("Égalité devant la loi et Liberté individuelle", "IC Égalité devant la loi et Liberté individuelle"))
   } 
   if("v2x_jucon" %in% to_plot){
     PlotHC <- PlotHC%>%
       hc_add_series(data = dat, type = "line", hcaes(x = year, y = v2x_jucon),
-          name = "Jud. Constraints on the Executive", color = v2x_jucon_color, id = "p7")
+          name = "Contraintes judiciaires sur l'exécutif", color = v2x_jucon_color, id = "p7")
       if(CIs){
       PlotHC <- PlotHC%>%
         hc_add_series(data = dat, type = "arearange", hcaes(x = year, low = v2x_jucon_codelow, high = v2x_jucon_codehigh),
-          name = "Jud. Constraints on the Executive CI", fillOpacity = 0.15, lineWidth = 0, color = v2x_jucon_color, linkedTo = "p7") 
+          name = "IC Contraintes judiciaires sur l'exécutif", fillOpacity = 0.15, lineWidth = 0, color = v2x_jucon_color, linkedTo = "p7") 
       }
   } 
   if(!("v2x_jucon" %in% to_plot)){
     PlotHC <- PlotHC%>%
-        hc_rm_series(name = c("Jud. Constraints on the Executive", "Jud. Constraints on the Executive CIs"))
+        hc_rm_series(name = c("Contraintes judiciaires sur l'exécutif", "IC Contraintes judiciaires sur l'exécutif"))
   } 
   if("v2xlg_legcon" %in% to_plot){
     PlotHC <- PlotHC%>%
       hc_add_series(data = dat, type = "line", hcaes(x = year, y = v2xlg_legcon),
-          name = "Leg. Constraints on the Executive", color = v2xlg_legcon_color, id = "p8")
+          name = "Contraintes législatives sur l'exécutif", color = v2xlg_legcon_color, id = "p8")
       if(CIs){
       PlotHC <- PlotHC%>%
         hc_add_series(data = dat, type = "arearange", hcaes(x = year, low = v2xlg_legcon_codelow, high = v2xlg_legcon_codehigh),
-          name = "Leg. Constraints on the Executive CI", fillOpacity = 0.15, lineWidth = 0, color = v2xlg_legcon_color, linkedTo = "p8") 
+          name = "IC Contraintes législatives sur l'exécutif", fillOpacity = 0.15, lineWidth = 0, color = v2xlg_legcon_color, linkedTo = "p8") 
       }
   } 
   if(!("v2xlg_legcon" %in% to_plot)){
     PlotHC <- PlotHC%>%
-        hc_rm_series(name = c("Leg. Constraints on the Executive", "Leg. Constraints on the Executive CIs"))
+        hc_rm_series(name = c("Contraintes législatives sur l'exécutif", "IC Contraintes législatives sur l'exécutif"))
   } 
   if("v2x_civlib" %in% to_plot){
     PlotHC <- PlotHC%>%
       hc_add_series(data = dat, type = "line", hcaes(x = year, y = v2x_civlib),
-          name = "Civil Liberties", color = v2x_civlib_color, id = "p9")
+          name = "Libertés civiles", color = v2x_civlib_color, id = "p9")
       if(CIs){
       PlotHC <- PlotHC%>%
         hc_add_series(data = dat, type = "arearange", hcaes(x = year, low = v2x_civlib_codelow, high = v2x_civlib_codehigh),
-          name = "Civil Liberties CI", fillOpacity = 0.15, lineWidth = 0, color = v2x_civlib_color, linkedTo = "p9") 
+          name = "IC Libertés civiles", fillOpacity = 0.15, lineWidth = 0, color = v2x_civlib_color, linkedTo = "p9") 
       }
   } 
   if(!("v2x_civlib" %in% to_plot)){
     PlotHC <- PlotHC%>%
-        hc_rm_series(name = c("Civil Liberties", "Civil Liberties CIs"))
+        hc_rm_series(name = c("Libertés civiles", "IC Libertés civiles"))
   } 
 
   if("v2x_polyarchy" %in% to_plot){
     PlotHC <- PlotHC%>%
       hc_add_series(data = dat, type = "line", hcaes(x = year, y = v2x_polyarchy),
-          name = "Electoral Democracy", color = v2x_polyarchy_color, id = "p1")
+          name = "Démocratie électorale", color = v2x_polyarchy_color, id = "p1")
       if(CIs){
       PlotHC <- PlotHC%>%
         hc_add_series(data = dat, type = "arearange", hcaes(x = year, low = v2x_polyarchy_codelow, high = v2x_polyarchy_codehigh),
-          name = "Electoral Democracy CI", fillOpacity = 0.15, lineWidth = 0, color = v2x_polyarchy_color, linkedTo = "p1") 
+          name = "IC Démocratie électorale", fillOpacity = 0.15, lineWidth = 0, color = v2x_polyarchy_color, linkedTo = "p1") 
       }
   } 
   if(!("v2x_polyarchy" %in% to_plot)){
     PlotHC <- PlotHC%>%
-        hc_rm_series(name = c("Electoral Democracy", "Electoral Democracy CIs"))
+        hc_rm_series(name = c("Démocratie électorale", "IC Démocratie électorale"))
   } 
 
   if("v2xel_frefair" %in% to_plot){
     PlotHC <- PlotHC%>%
       hc_add_series(data = dat, type = "line", hcaes(x = year, y = v2xel_frefair),
-          name = "Clean Elections", color = v2xel_frefair_color, id = "p3")
+          name = "Élections libres et transparentes", color = v2xel_frefair_color, id = "p3")
     if(CIs){
       PlotHC <- PlotHC%>%
         hc_add_series(data = dat, type = "arearange", hcaes(x = year, low = v2xel_frefair_codelow, high = v2xel_frefair_codehigh),
-          name = "Clean Elections CI", fillOpacity = 0.15, lineWidth = 0, color = v2xel_frefair_color, linkedTo = "p3") 
+          name = "IC Élections libres et transparentes", fillOpacity = 0.15, lineWidth = 0, color = v2xel_frefair_color, linkedTo = "p3") 
       }
   } 
   if(!("v2xel_frefair" %in% to_plot)){
     PlotHC <- PlotHC%>%
-        hc_rm_series(name = c("Clean Elections", "Clean Elections CIs"))
+        hc_rm_series(name = c("Élections libres et transparentes", "IC Élections libres et transparentes"))
   }
   if("v2x_freexp_altinf" %in% to_plot){
     PlotHC <- PlotHC%>%
       hc_add_series(data = dat, type = "line", hcaes(x = year, y = v2x_freexp_altinf),
-          name = "Freedom of Expression & Alt. Info", color = v2x_freexp_altinf_color, id = "p4")
+          name = "Liberté d'expression et Sources alternatives d'information", color = v2x_freexp_altinf_color, id = "p4")
       if(CIs){
       PlotHC <- PlotHC%>%
         hc_add_series(data = dat, type = "arearange", hcaes(x = year, low = v2x_freexp_altinf_codelow, high = v2x_freexp_altinf_codehigh),
-          name = "Freedom of Expression & Alt. Info CI", fillOpacity = 0.15, lineWidth = 0, color = v2x_freexp_altinf_color, linkedTo = "p4") 
+          name = "IC Liberté d'expression et Sources alternatives d'information", fillOpacity = 0.15, lineWidth = 0, color = v2x_freexp_altinf_color, linkedTo = "p4") 
       }
   } 
   if(!("v2x_freexp_altinf" %in% to_plot)){
     PlotHC <- PlotHC%>%
-        hc_rm_series(name = c("Freedom of Expression & Alt. Info", "Freedom of Expression & Alt. Info CIs"))
+        hc_rm_series(name = c("Liberté d'expression et Sources alternatives d'information", "IC Liberté d'expression et Sources alternatives d'information"))
   } 
   if("v2x_frassoc_thick" %in% to_plot){
     PlotHC <- PlotHC%>%
       hc_add_series(data = dat, type = "line", hcaes(x = year, y = v2x_frassoc_thick),
-          name = "Freedom of Association", color = v2x_frassoc_thick_color, id = "p5")
+          name = "Liberté d'association", color = v2x_frassoc_thick_color, id = "p5")
       if(CIs){
       PlotHC <- PlotHC%>%
         hc_add_series(data = dat, type = "arearange", hcaes(x = year, low = v2x_frassoc_thick_codelow, high = v2x_frassoc_thick_codehigh),
-          name = "Freedom of Association CI", fillOpacity = 0.15, lineWidth = 0, color = v2x_frassoc_thick_color, linkedTo = "p5") 
+          name = "IC Liberté d'association", fillOpacity = 0.15, lineWidth = 0, color = v2x_frassoc_thick_color, linkedTo = "p5") 
       }
   } 
   if(!("v2x_frassoc_thick" %in% to_plot)){
     PlotHC <- PlotHC%>%
-        hc_rm_series(name = c("Freedom of Association", "Freedom of Association CIs"))
+        hc_rm_series(name = c("Liberté d'association", "IC Liberté d'association"))
   } 
   PlotHC
 }
