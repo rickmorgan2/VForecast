@@ -1,0 +1,99 @@
+# Draft French translation file for V-Forecast Shiny app (https://github.com/rickmorgan2/VForecast)
+# Version 2, 2 MArch 2020.
+# Author of French translation and "sed" commands: Mayeul Kauffmann, Cybis-UGA, March 2020
+# The French translation part and the sed part are licensed under CC0 (public domain);
+# hence they can be mixed with other licenses if needed. Attribution is not required but appreciated.
+#
+# This is a tabular "csv" file (with tab separation).
+# Field description:
+# notes_Mayeul: comments
+# file: name of the file where the string originated
+# string_eng: English string
+# string_fr: French string
+# sed: GNU sed command to launch to replace the string (in place, modifying the file 'file')
+notes_Mayeul	file	string_eng	string_fr	sed
+	ui.r	V-Forecast: Predicting Adverse Regime Transitions (PART)	V-Forecast : Prévision des changements de régime défavorables (PART: Predicting Adverse Regime Transitions)	sed -i "s/\"V-Forecast: Predicting Adverse Regime Transitions (PART)\"/\"V-Forecast : Prévision des changements de régime défavorables (PART: Predicting Adverse Regime Transitions)\"/g" ui.r
+	ui.r	We define an adverse regime transition as a year-to-year decrease in the	Une transition de régime défavorable est définie comme une diminution sur un an de l’	sed -i "s/\"We define an adverse regime transition as a year-to-year decrease in the\"/\"Une transition de régime défavorable est définie comme une diminution sur un an de l’\"/g" ui.r
+	ui.r	Regimes of the World (RoW) index,	Indicateur des régimes du monde (RoW: Regimes of the World),	sed -i "s/\"Regimes of the World (RoW) index,\"/\"Indicateur des régimes du monde (RoW: Regimes of the World),\"/g" ui.r
+	ui.r	which classifies political regimes as either a 	qui classe les régimes politiques en tant que 	sed -i "s/\"which classifies political regimes as either a \"/\"qui classe les régimes politiques en tant que \"/g" ui.r
+	ui.r	closed autocracy	autocratie fermée	sed -i "s/\"closed autocracy\"/\"autocratie fermée\"/g" ui.r
+	ui.r	electoral autocracy	autocratie électorale	sed -i "s/\"electoral autocracy\"/\"autocratie électorale\"/g" ui.r
+	ui.r	electoral democracy	démocratie électorale	sed -i "s/\"electoral democracy\"/\"démocratie électorale\"/g" ui.r
+	ui.r	or liberal democracy	ou démocratie libérale	sed -i "s/\"or liberal democracy\"/\"ou démocratie libérale\"/g" ui.r
+	ui.r	closed autocracy, electoral autocracy, electoral democracy, or liberal democracy. 	autocratie fermée, autocratie électorale, démocratie électorale ou démocratie libérale. 	sed -i "s/\"closed autocracy, electoral autocracy, electoral democracy, or liberal democracy. \"/\"autocratie fermée, autocratie électorale, démocratie électorale ou démocratie libérale. \"/g" ui.r
+	ui.r	The PART project estimates the risk of moving down this scale within a two-year window.		sed -i "s/\"The PART project estimates the risk of moving down this scale within a two-year window.\"/\"\"/g" ui.r
+	ui.r	For more details, please see our	Pour plus de détails, consultez le	sed -i "s/\"For more details, please see our\"/\"Pour plus de détails, consultez le\"/g" ui.r
+	ui.r	 working paper.	 document de travail.	sed -i "s/\" working paper.\"/\" document de travail.\"/g" ui.r
+	ui.r	We welcome feedback.	Les commentaires sont bienvenus.	sed -i "s/\"We welcome feedback.\"/\"Les commentaires sont bienvenus.\"/g" ui.r
+	ui.r	Click on a country in the map, the plot, or select a country from the list below to view its estimated risk and select regime characteristics.	Cliquez sur un pays figurant sur la carte, sur le graphique ou sélectionnez un pays dans la liste ci-dessous pour visualiser son risque estimé et sélectionner les caractéristiques du régime.	sed -i "s/\"Click on a country in the map, the plot, or select a country from the list below to view its estimated risk and select regime characteristics.\"/\"Cliquez sur un pays figurant sur la carte, sur le graphique ou sélectionnez un pays dans la liste ci-dessous pour visualiser son risque estimé et sélectionner les caractéristiques du régime.\"/g" ui.r
+	ui.r	Country Characteristics:	Caractéristiques du pays :	sed -i "s/\"Country Characteristics:\"/\"Caractéristiques du pays :\"/g" ui.r
+	ui.r	1) Select a country	1) Sélectionnez un pays	sed -i "s/\"1) Select a country\"/\"1) Sélectionnez un pays\"/g" ui.r
+	ui.r	2) Select V-Dem indices to compare	2) Sélectionnez les indicateurs de V-Dem à comparer	sed -i "s/\"2) Select V-Dem indices to compare\"/\"2) Sélectionnez les indicateurs de V-Dem à comparer\"/g" ui.r
+	ui.r	Liberal Component	Volet libéral	sed -i "s/\"Liberal Component\"/\"Volet libéral\"/g" ui.r
+	ui.r	Equality Before the Law & Ind. Liberty	Égalité devant la loi et Liberté individuelle	sed -i "s/\"Equality Before the Law & Ind. Liberty\"/\"Égalité devant la loi et Liberté individuelle\"/g" ui.r
+	ui.r	Judicial Constraints on the Executive	Contraintes judiciaires sur l'exécutif	sed -i "s/\"Judicial Constraints on the Executive\"/\"Contraintes judiciaires sur l'exécutif\"/g" ui.r
+	ui.r	Legislative Constraints on the Executive	Contraintes législatives sur l'exécutif	sed -i "s/\"Legislative Constraints on the Executive\"/\"Contraintes législatives sur l'exécutif\"/g" ui.r
+	ui.r	Civil Liberties	Libertés civiles	sed -i "s/\"Civil Liberties\"/\"Libertés civiles\"/g" ui.r
+	ui.r	Electoral Democracy	Démocratie électorale	sed -i "s/\"Electoral Democracy\"/\"Démocratie électorale\"/g" ui.r
+	ui.r	Clean Elections	Élections libres et transparentes	sed -i "s/\"Clean Elections\"/\"Élections libres et transparentes\"/g" ui.r
+	ui.r	Freedom of Expression & Alt. Sources of Info	Liberté d'expression et Sources alternatives d'information	sed -i "s/\"Freedom of Expression & Alt. Sources of Info\"/\"Liberté d'expression et Sources alternatives d'information\"/g" ui.r
+	ui.r	Freedom of Association (thick)	Liberté d'association (étendue)	sed -i "s/\"Freedom of Association (thick)\"/\"Liberté d'association (étendue)\"/g" ui.r
+	ui.r	Interpretation:	Interprétation :	sed -i "s/\"Interpretation:\"/\"Interprétation :\"/g" ui.r
+	ui.r	The complexity of the machine learning models we use makes it difficult to identify which specific variables are driving predictions. Therefore, 	La complexité des modèles utilisés (basés sur l'apprentissage automatique) rend difficile l'identification spécifique des variables ayant un impact décisif sur les prédictions. Aussi, 	sed -i "s/\"The complexity of the machine learning models we use makes it difficult to identify which specific variables are driving predictions. Therefore, \"/\"La complexité des modèles utilisés (basés sur l'apprentissage automatique) rend difficile l'identification spécifique des variables ayant un impact décisif sur les prédictions. Aussi, \"/g" ui.r
+	ui.r	the time-series plot is for descriptive purposes only.	le graphique des séries chronologiques n'a qu'un but descriptif.	sed -i "s/\"the time-series plot is for descriptive purposes only.\"/\"le graphique des séries chronologiques n'a qu'un but descriptif.\"/g" ui.r
+	ui.r	It is meant to help identify trends, not causal relationships, across key V-Dem indices. For access to country-level time series across all V-Dem variables, please use V-Dem's Country Graph tool 	Il est destiné à aider à identifier des tendances parmi les principaux indicateurs de V-Dem, et non des relations de cause à effet. Pour accéder aux séries chronologiques par pays pour toutes les variables V-Dem, veuillez utiliser l'outil Graphique par pays de V-Dem 	sed -i "s/\"It is meant to help identify trends, not causal relationships, across key V-Dem indices. For access to country-level time series across all V-Dem variables, please use V-Dem's Country Graph tool \"/\"Il est destiné à aider à identifier des tendances parmi les principaux indicateurs de V-Dem, et non des relations de cause à effet. Pour accéder aux séries chronologiques par pays pour toutes les variables V-Dem, veuillez utiliser l'outil Graphique par pays de V-Dem \"/g" ui.r
+	ui.r	here	ici	sed -i "s/\"here\"/\"ici\"/g" ui.r
+	ui.r	Note	Note :	sed -i "s/\"Note\"/\"Note :\"/g" ui.r
+	ui.r	Methodology	Méthodologie	sed -i "s/\"Methodology\"/\"Méthodologie\"/g" ui.r
+	ui.r	It is important to note that these forecasts are probabilistic: a high estimated risk does not mean that an ART will occur with certainty; similarly, a low estimated risk does not mean that there is zero change an ART will not occur.	Il est important de noter que ces prévisions sont probabilistes : un risque estimé élevé ne signifie pas qu'un changement défavorable de régime se produira avec certitude ; de même, un risque estimé faible ne signifie pas qu'il n'y a aucune chance qu'un changement défavorable de régime se produise.	sed -i "s/\"It is important to note that these forecasts are probabilistic: a high estimated risk does not mean that an ART will occur with certainty; similarly, a low estimated risk does not mean that there is zero change an ART will not occur.\"/\"Il est important de noter que ces prévisions sont probabilistes : un risque estimé élevé ne signifie pas qu'un changement défavorable de régime se produira avec certitude ; de même, un risque estimé faible ne signifie pas qu'il n'y a aucune chance qu'un changement défavorable de régime se produise.\"/g" ui.r
+	ui.r	Further, given that this is the first year of this project, we do not yet know how accurately this project can forecast future transitions in the real world as opposed to statistical simulations and out-of-sample tests. However, we are posting these forecasts in the interest of transparency.	En outre, puisqu'il s'agit de la première année de ce projet, nous ne savons pas encore avec quelle précision ce projet peut prévoir les changements futurs dans le monde réel par delà les simulations et tests statistiques. Toutefois, nous publions ces prévisions dans un souci de transparence.	sed -i "s/\"Further, given that this is the first year of this project, we do not yet know how accurately this project can forecast future transitions in the real world as opposed to statistical simulations and out-of-sample tests. However, we are posting these forecasts in the interest of transparency.\"/\"En outre, puisqu'il s'agit de la première année de ce projet, nous ne savons pas encore avec quelle précision ce projet peut prévoir les changements futurs dans le monde réel par delà les simulations et tests statistiques. Toutefois, nous publions ces prévisions dans un souci de transparence.\"/g" ui.r
+adding acronym definition	ui.r	Confidence Intervals	Intervalles de confiance (IC)	sed -i "s/\"Confidence Intervals\"/\"Intervales de confiance (IC)\"/g" ui.r
+	ui.r	The PART project uses data from the	Le projet PART utilise des données de l’Institut 	sed -i "s/\"The PART project uses data from the\"/\"Le projet PART utilise des données de l’Institut \"/g" ui.r
+	ui.r	Varieties of Democracy (V-Dem)	Varieties of Democracy (V-Dem)	sed -i "s/\"Varieties of Democracy (V-Dem)\"/\"Varieties of Democracy (V-Dem)\"/g" ui.r
+	ui.r	Institute and other sources to estimate the risk of adverse regime transitions during the next	 et d'autres sources pour estimer le risque de changements de régime défavorables au cours des 	sed -i "s/\"Institute and other sources to estimate the risk of adverse regime transitions during the next\"/\" et d'autres sources pour estimer le risque de changements de régime défavorables au cours des \"/g" ui.r
+	ui.r	two years (2019-2020).	deux années suivantes (2019-2020).	sed -i "s/\"two years (2019-2020).\"/\"deux années suivantes (2019-2020).\"/g" ui.r
+	ui.r	Blue bars	Les barres bleues	sed -i "s/\"Blue bars\"/\"Les barres bleues\"/g" ui.r
+app has no legend for abbréviations such as ART, CI	ui.r	 indicate that an ART occurred within 2-year forecast window	 indiquent qu'un changement de régime défavorable a eu lieu durant la période de 2 ans	sed -i "s/\" indicate that an ART occurred within 2-year forecast window\"/\" indiquent qu'un changement de régime défavorable a eu lieu durant la période de 2 ans\"/g" ui.r
+	ui.r	Purple bars	Les barres violettes	sed -i "s/\"Purple bars\"/\"Les barres violettes\"/g" ui.r
+	ui.r	 indicate that no ART occurred within 2-year forecast window	 indiquent qu'aucun changement de régime défavorable n'a eu lieu durant la période de 2 ans	sed -i "s/\" indicate that no ART occurred within 2-year forecast window\"/\" indiquent qu'aucun changement de régime défavorable n'a eu lieu durant la période de 2 ans\"/g" ui.r
+why plural? Only one gray bar at a time	ui.r	Gray bars	La barre grise	sed -i "s/\"Gray bars\"/\"La barre grise\"/g" ui.r
+	ui.r	 indicate the estimated risk for current 2-year forecast window	 indique le risque estimé pour la période de prévision de deux ans en cours	sed -i "s/\" indicate the estimated risk for current 2-year forecast window\"/\" indique le risque estimé pour la période de prévision de deux ans en cours\"/g" ui.r
+	server.r	Estimated Risk 2019-20	Risque estimé 2019-2020	sed -i "s/\"Estimated Risk 2019-20\"/\"Risque estimé 2019-2020\"/g" server.r
+	server.r	Closed Autocracy	Autocratie Fermée	sed -i "s/\"Closed Autocracy\"/\"Autocratie Fermée\"/g" server.r
+	server.r	Current Extended RoW Classification: 	Classification RoW Étendue actuelle (régime) : 	sed -i "s/\"Current Extended RoW Classification: \"/\"Classification RoW Étendue actuelle (régime) : \"/g" server.r
+				
+	global.r	Estimated Risk (%)	Risque estimé (%)	sed -i "s/\"Estimated Risk (%)\"/\"Risque estimé (%)\"/g" global.r
+	global.r	Liberal Component	Volet libéral	sed -i "s/\"Liberal Component\"/\"Volet libéral\"/g" global.r
+why Cis ?	global.r	Liberal Component CIs	IC Volet libéral	sed -i "s/\"Liberal Component CIs\"/\"IC Volet libéral\"/g" global.r
+	global.r	Liberal Component CI	IC Volet libéral	sed -i "s/\"Liberal Component CI\"/\"IC Volet libéral\"/g" global.r
+	global.r	Equality Before the Law & Indiv. Liberty	Égalité devant la loi et Liberté individuelle	sed -i "s/\"Equality Before the Law & Indiv. Liberty\"/\"Égalité devant la loi et Liberté individuelle\"/g" global.r
+	global.r	Equality Before the Law & Indiv. Liberty CI	IC Égalité devant la loi et Liberté individuelle	sed -i "s/\"Equality Before the Law & Indiv. Liberty CI\"/\"IC Égalité devant la loi et Liberté individuelle\"/g" global.r
+why Cis ?	global.r	Equality Before the Law & Indiv. Liberty CIs	IC Égalité devant la loi et Liberté individuelle	sed -i "s/\"Equality Before the Law & Indiv. Liberty CIs\"/\"IC Égalité devant la loi et Liberté individuelle\"/g" global.r
+	global.r	Jud. Constraints on the Executive	Contraintes judiciaires sur l'exécutif	sed -i "s/\"Jud. Constraints on the Executive\"/\"Contraintes judiciaires sur l'exécutif\"/g" global.r
+why Cis ?	global.r	Jud. Constraints on the Executive CIs	IC Contraintes judiciaires sur l'exécutif	sed -i "s/\"Jud. Constraints on the Executive CIs\"/\"IC Contraintes judiciaires sur l'exécutif\"/g" global.r
+	global.r	Jud. Constraints on the Executive CI	IC Contraintes judiciaires sur l'exécutif	sed -i "s/\"Jud. Constraints on the Executive CI\"/\"IC Contraintes judiciaires sur l'exécutif\"/g" global.r
+	global.r	Leg. Constraints on the Executive	Contraintes législatives sur l'exécutif	sed -i "s/\"Leg. Constraints on the Executive\"/\"Contraintes législatives sur l'exécutif\"/g" global.r
+why Cis ?	global.r	Leg. Constraints on the Executive CIs	IC Contraintes législatives sur l'exécutif	sed -i "s/\"Leg. Constraints on the Executive CIs\"/\"IC Contraintes législatives sur l'exécutif\"/g" global.r
+why Cis ?	global.r	Leg. Constraints on the Executive CI	IC Contraintes législatives sur l'exécutif	sed -i "s/\"Leg. Constraints on the Executive CI\"/\"IC Contraintes législatives sur l'exécutif\"/g" global.r
+	global.r	Civil Liberties	Libertés civiles	sed -i "s/\"Civil Liberties\"/\"Libertés civiles\"/g" global.r
+why Cis ?	global.r	Civil Liberties CIs	IC Libertés civiles	sed -i "s/\"Civil Liberties CIs\"/\"IC Libertés civiles\"/g" global.r
+why Cis ?	global.r	Civil Liberties CI	IC Libertés civiles	sed -i "s/\"Civil Liberties CI\"/\"IC Libertés civiles\"/g" global.r
+	global.r	Electoral Democracy	Démocratie électorale	sed -i "s/\"Electoral Democracy\"/\"Démocratie électorale\"/g" global.r
+	global.r	Electoral Democracy CI	IC Démocratie électorale	sed -i "s/\"Electoral Democracy CI\"/\"IC Démocratie électorale\"/g" global.r
+why Cis ?	global.r	Electoral Democracy CIs	IC Démocratie électorale	sed -i "s/\"Electoral Democracy CIs\"/\"IC Démocratie électorale\"/g" global.r
+	global.r	Clean Elections	Élections libres et transparentes	sed -i "s/\"Clean Elections\"/\"Élections libres et transparentes\"/g" global.r
+	global.r	Clean Elections CI	IC Élections libres et transparentes	sed -i "s/\"Clean Elections CI\"/\"IC Élections libres et transparentes\"/g" global.r
+	global.r	Clean Elections CIs	IC Élections libres et transparentes	sed -i "s/\"Clean Elections CIs\"/\"IC Élections libres et transparentes\"/g" global.r
+	global.r	Freedom of Expression & Alt. Info	Liberté d'expression et Sources alternatives d'information	sed -i "s/\"Freedom of Expression & Alt. Info\"/\"Liberté d'expression et Sources alternatives d'information\"/g" global.r
+why Cis ? aren’t the 2 indices merged?	global.r	Freedom of Expression & Alt. Info CIs	IC Liberté d'expression et Sources alternatives d'information	sed -i "s/\"Freedom of Expression & Alt. Info CIs\"/\"IC Liberté d'expression et Sources alternatives d'information\"/g" global.r
+	global.r	Freedom of Expression & Alt. Info CI	IC Liberté d'expression et Sources alternatives d'information	sed -i "s/\"Freedom of Expression & Alt. Info CI\"/\"IC Liberté d'expression et Sources alternatives d'information\"/g" global.r
+not the « thick » freedom?	global.r	Freedom of Association	Liberté d'association	sed -i "s/\"Freedom of Association\"/\"Liberté d'association\"/g" global.r
+not the « thick » freedom?	global.r	Freedom of Association CI	IC Liberté d'association	sed -i "s/\"Freedom of Association CI\"/\"IC Liberté d'association\"/g" global.r
+not the « thick » freedom?	global.r	Freedom of Association CIs	IC Liberté d'association	sed -i "s/\"Freedom of Association CIs\"/\"IC Liberté d'association\"/g" global.r
+"Top ", N, " Estimated Risks (%) for 2019-2020"	global.r	Top 		sed -i "s/\"Top \"/\"\"/g" global.r
+"Top ", N, " Estimated Risks (%) for 2019-2020"	global.r	 Estimated Risks (%) for 2019-2020	 pays les plus à risque pour 2019-2020 (risque en %)	sed -i "s/\" Estimated Risks (%) for 2019-2020\"/\" pays les plus à risque pour 2019-2020 (risque en %)\"/g" global.r
+    ui.r	(See	(Cf. le	sed -i "s/\"(See\"/\"(Cf. le\"/g" ui.r
+    ui.r	 working paper	document de travail	sed -i "s/\" working paper\"/\"document de travail\"/g" ui.r
+    ui.r	 for more details)	 pour plus de précisions)	sed -i "s/\" for more details)\"/\" pour plus de précisions)\"/g" ui.r
+
+original has bold html tags but sed chokes on these ; so our sed command does not check enclosing double quotes in source R code either	global.r	Yearly Risk Estimates: 2011-2020	Estimations du risque annuel : 2011-2020	sed -i 's/Yearly Risk Estimates: 2011-2020/Estimations du risque annuel : 2011-2020/g' global.r

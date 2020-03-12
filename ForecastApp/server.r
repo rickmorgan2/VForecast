@@ -11,9 +11,9 @@ function(input, output, session) {
       setView(lng = 12, lat = 35, zoom = 2)%>%
       setMaxBounds(lng1 = -260, lat1 = -55.90223, lng2 = 360, lat2 = 83.11387)%>%
       addLegend(position = "bottomleft", 
-        title = "Estimated Risk 2019-20", 
+        title = "Risque estimé 2019-2020", 
         opacity = 1,
-        labels = c("< 5%", "< 10%", "< 20%", "< 25%", ">= 25%", "Closed Autocracy"), 
+        labels = c("< 5%", "< 10%", "< 20%", "< 25%", ">= 25%", "Autocratie Fermée"), 
         colors = c("#fef0d9","#fdcc8a","#fc8d59", "#e34a33", "#b30000", "#D0D0D1"))
   })
   # country_name <- NULL
@@ -43,7 +43,7 @@ function(input, output, session) {
     setView(lng = center_lon, lat = center_lat, zoom = input$map1_zoom)
     if(country_name != ""){
       output$dataTable <- renderTable({extended_row_dat[extended_row_dat$country_name == country_name, c("year", "Extended RoW Classification")]}, width = "auto")
-      output$ROWclass <- renderText({paste("Current Extended RoW Classification: ", extended_row_dat[extended_row_dat$country_name == country_name & extended_row_dat$year == 2018, c("Extended RoW Classification")], sep ="")})
+      output$ROWclass <- renderText({paste("Classification RoW Étendue actuelle (régime) : ", extended_row_dat[extended_row_dat$country_name == country_name & extended_row_dat$year == 2018, c("Extended RoW Classification")], sep ="")})
       dat1 <- prob1_dat[prob1_dat$country_name == country_name, ]
       output$riskPlot <-  renderHighchart({riskPlotFun(dat1)})
     }

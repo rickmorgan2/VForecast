@@ -13,5 +13,5 @@ library("shiny")
     setwd("C:/Users/xricmo/Dropbox/VForecast Beta App/")
   }
 }
-
+setwd("~/bin/git/vforecast_i18n/VForecast")
 runApp("ForecastApp")
