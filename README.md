@@ -3,6 +3,10 @@
 
 # Predicting Adverse Regime Transitions (PART)
 
+_NOTE: this repo has moved to https://github.com/vdeminstitute/part._
+
+********
+
 README last compiled on: 2019-12-17
 
 Data and code for the V-Dem VForecast/PART project to predict the risk
